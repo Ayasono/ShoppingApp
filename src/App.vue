@@ -1,5 +1,6 @@
 <template>
 	<div id="app">
+		<h1 @click="foo" >{{arr}}</h1>
 		<keep-alive include="category">
 			<router-view></router-view>
 		</keep-alive>
@@ -48,9 +49,14 @@
 		data() {
 			return {
 				isShown: "true",
+				arr: []
 			};
 		},
 		methods: {
+			foo() {
+				this.arr[0]='111'
+				console.log(this.arr)
+			},
 			jumpToHome() {
 				this.$router.replace({
 					path: "/home",
